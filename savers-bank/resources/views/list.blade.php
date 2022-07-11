@@ -6,9 +6,17 @@
 </header>
 
 <main>
-@if($message !== '')
-<div class="msg">{{$message}}</div>
-@endif
+    <div class="dropdown-sort">
+    <div class="sort-by">Sort by</div>
+    <div class="dropdown-sort-content">
+        <a class="sort-property" href="{{route('list', ['by'=> 'name', 'sort' => 'asc'])}}">Name A-Z</a>
+        <a class="sort-property" href="{{route('list', ['by'=> 'name', 'sort' => 'desc'])}}">Name Z-A</a>
+        <a class="sort-property" href="{{route('list', ['by'=> 'surname', 'sort' => 'asc'])}}">Surname A-Z</a>
+        <a class="sort-property" href="{{route('list', ['by'=> 'surname', 'sort' => 'desc'])}}">Surname Z-A</a>
+        <a class="sort-property" href="{{route('list', ['by'=> 'money', 'sort' => 'asc'])}}">Balance, smallest first</a>
+        <a class="sort-property" href="{{route('list', ['by'=> 'money', 'sort' => 'desc'])}}">Balance, biggest first</a>
+    </div>
+    </div>
     <div class="list-labels">
         <div class="label">Name</div>
         <div class="label">Surname</div>

@@ -21,9 +21,5 @@
                 <button>Create</button>
             </div>
         </form>
-
-        @if ($message !== '')
-        <div class="msg">{{$message}}</div>
-        @endif
     </main>
 @endsection

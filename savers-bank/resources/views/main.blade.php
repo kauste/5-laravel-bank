@@ -9,6 +9,7 @@
 </head>
 <body>
 @include('nav')
+@include('msg.message')
 @yield('content')
 </body>
 </html>

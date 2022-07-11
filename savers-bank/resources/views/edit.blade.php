@@ -14,7 +14,7 @@
         <div class="label">{{$addOrWithdrow}} eur.</div>
     </div>
     <
-    <form class="list-of-clients" method="POST" action="{{route('doEdit', $client). '/'.$addOrWithdrow}}">
+    <form class="list-of-clients" method="POST" action="{{route('doEdit', [$client, $addOrWithdrow])}}">
         <div class="client-data">{{$client->name}}</div>
         <div class="client-data">{{$client->surname}}</div>
         <div class="client-data">{{$client->person_id}}</div>
@@ -23,12 +23,7 @@
         <input class="edit-input" name="{{$addOrWithdrow}}">
         @csrf
         @method('put')
-        <button class="edit-btn"type="submit">{{$addOrWithdrow}}</button>
-        
+        <button class="edit-btn"type="submit">{{$addOrWithdrow}}</button>      
     </form>
-
-        {{-- @if ($message !== '')
-        <div class="msg">{{$message}}</div>
-        @endif --}}
     </main>
 @endsection
