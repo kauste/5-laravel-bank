@@ -4,7 +4,6 @@
 <header>
     <h2>Our clients</h2>
 </header>
-
 <main>
     <div class="dropdown-sort">
     <div class="sort-by">Sort by</div>
