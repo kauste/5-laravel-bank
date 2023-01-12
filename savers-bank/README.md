@@ -12,6 +12,7 @@ This is my very first laravel project made for educational purposes only. The ma
 - Laravel
 - CRUD on Laravel
 - Blade
+- Sort
 
 ## Deepen my knowledge
 
