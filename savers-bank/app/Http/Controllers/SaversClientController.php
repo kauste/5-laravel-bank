@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\SaversClient;
-// use App\Http\Requests\StoreSaversClientRequest;
-// use App\Http\Requests\UpdateSaversClientRequest;
 use Illuminate\Http\Request; /// !!!!!
 
 class SaversClientController extends Controller
@@ -35,11 +33,7 @@ class SaversClientController extends Controller
             return true;
         }
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index(Request $request)
     {
    
@@ -61,23 +55,13 @@ class SaversClientController extends Controller
         return view('list', ['title' => 'Clients', 'clients' => $clients]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         
         return view('post.create', ['title' => 'Create new client', 'iban' => (new SaversClient)->validIban()]); 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         if($request->name < 3)
@@ -106,35 +90,11 @@ class SaversClientController extends Controller
         return  redirect()-> route('showCreate')-> with('message', $msg);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\SaversClient  $saversClient
-     * @return \Illuminate\Http\Response
-     */
-    public function show(SaversClient $saversClient)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\SaversClient  $saversClient
-     * @return \Illuminate\Http\Response
-     */
     public function edit(SaversClient $saversClient, $addOrWithdrow, Request $request) 
     {
         return view('edit', ['title' => $addOrWithdrow, 'client'=> $saversClient, 'addOrWithdrow' => $addOrWithdrow]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\SaversClient  $saversClient
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, SaversClient $saversClient)
     {
         if($request->addOrWithdrow === 'add'){
@@ -169,12 +129,6 @@ class SaversClientController extends Controller
         return redirect()-> route('clientEdit', [$saversClient, $request->addOrWithdrow])->with('message', $msg);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\SaversClient  $saversClient
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(SaversClient $saversClient)
     {
         if($saversClient->sum > 0) {

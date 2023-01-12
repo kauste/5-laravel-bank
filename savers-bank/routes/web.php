@@ -14,9 +14,9 @@ use App\Http\Controllers\SaversClientController;
 |
 */
 Route::get('/', [SaversClientController::class, 'index']);
-Route::get('/list', [SaversClientController::class, 'index'])-> name('list');
-Route::get('/create',[SaversClientController::class, 'create'])-> name('showCreate');
-Route::post('/create',[SaversClientController::class, 'store'])-> name('doCreate'); 
-Route::get('/edit/{saversClient}/{addOrWithdrow?}', [SaversClientController::class, 'edit'])-> name('clientEdit');
-Route::put('/edit/{saversClient}/{addOrWithdrow?}',[SaversClientController::class, 'update'])-> name('doEdit');
-Route::delete('/delete/{saversClient}',[SaversClientController::class, 'destroy'])-> name('doDelete'); 
+Route::get('/list', [SaversClientController::class, 'index'])->name('list');
+Route::get('/create',[SaversClientController::class, 'create'])->name('showCreate');
+Route::post('/create',[SaversClientController::class, 'store'])->name('doCreate'); 
+Route::get('/edit/{saversClient}/{addOrWithdrow?}', [SaversClientController::class, 'edit'])->name('clientEdit');
+Route::put('/edit/{saversClient}/{addOrWithdrow?}',[SaversClientController::class, 'update'])->name('doEdit');
+Route::delete('/delete/{saversClient}',[SaversClientController::class, 'destroy'])->name('doDelete'); 

@@ -39,7 +39,7 @@
         </form>
     </div>
     @empty
-    <div>There is no clients added yet.</div>
+    <div class="no-clients">There is no clients added yet.</div>
     @endforelse
 </main>
 @endsection

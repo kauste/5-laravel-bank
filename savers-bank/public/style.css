@@ -1,5 +1,4 @@
-body,
-body * {
+body, body * {
     margin: 0;
     padding: 0;
     vertical-align: top;
@@ -225,4 +224,8 @@ button:focus-visible {
 }
 .sort-property:hover{
     background-color: #7CAF74;
+}
+.no-clients{
+    margin-top: 20px;
+    text-align: center;
 }
